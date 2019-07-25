@@ -1,0 +1,44 @@
+.hero {
+  @extend %background-image;
+  position: relative;
+  z-index: 1;
+  height: 950px;
+  margin-top: -104px;
+  padding-top: 104px;
+
+  &__heading {
+    margin-bottom: 2.375rem;
+  }
+
+  &__subheading {
+  }
+
+  &__text {
+    color: $white;
+  }
+
+  &__container {
+    &,
+    & > .row {
+      height: 100%;
+    }
+  }
+
+  &__text-container {
+    padding-top: 350px;
+  }
+
+  &__phone {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 300px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 475px;
+    &__text-container {
+      padding-top: 175px;
+    }
+  }
+}

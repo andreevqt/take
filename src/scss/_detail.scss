@@ -1,0 +1,10 @@
+.detail {
+  &__heading {
+    font-weight: 600;
+    margin-bottom: 1.875rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 2rem;
+  }
+}

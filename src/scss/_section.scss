@@ -1,0 +1,155 @@
+.section {
+  padding: 6.25rem 0;
+  $parent: &;
+
+  &__heading {
+    margin-bottom: 2.5rem;
+  }
+
+  &__description {
+    color: #959595;
+    margin-bottom: 2.5rem;
+  }
+
+  &--start {
+    #{$parent}__right {
+      padding-top: 202px;
+      @include media-breakpoint-down(lg) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &--full-image {
+    @extend %background-image;
+    color: $white;
+    height: 874px + 50 * 2;
+
+    #{$parent}__heading {
+      // margin-top: 28rem;
+    }
+
+    #{$parent}__description {
+      color: $white;
+      margin-bottom: 1.25rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: auto;
+    }
+  }
+
+  &--boxes {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &--details {
+    .detail__heading {
+      color: #67676d;
+    }
+
+    .detail__description {
+      color: #959595;
+    }
+  }
+
+  &--reasons {
+    padding: 7.5rem 0;
+    color: $white;
+    background-color: $green;
+  }
+
+  &--buying {
+    background-color: #f6f7fa;
+  }
+
+  &:not(&--boxes) {
+    @include media-breakpoint-down(sm) {
+      padding: calc(6.25rem / 2) 0;
+    }
+  }
+}
+
+.box-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+
+  height: 17.5rem * 2;
+  position: relative;
+  overflow: hidden;
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+
+    padding: 3.125rem 2.5rem;
+    height: 17.5rem;
+
+    &--pink {
+      color: $white;
+      background-color: $pink;
+    }
+
+    &--purple {
+      color: $white;
+      background-color: $purple;
+    }
+
+    &--picture {
+      color: $white;
+      @extend %background-image;
+    }
+
+    &--purple-light {
+      color: $white;
+      background-color: $purple-light;
+    }
+
+    &--green {
+      color: $white;
+      background-color: $green;
+    }
+  }
+
+  &__heading {
+    line-height: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__link {
+    margin-top: auto;
+  }
+
+  &__arrow {
+  }
+
+  &__container {
+    margin: 0;
+
+    &--left,
+    &--right {
+      flex: 1 0 100%;
+    }
+
+    &--left {
+    }
+
+    &--right {
+      /* Hack */
+      margin-left: -1px;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
+}
